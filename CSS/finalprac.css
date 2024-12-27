@@ -1,0 +1,1097 @@
+/* Content Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* HEADER */
+#header {
+    color: rgb(210, 163, 111);
+    z-index: 1;
+   
+}
+
+.hcontainer {
+    background-color: white;
+    padding: 6px 7%;
+    transition: .3s;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.hlogo {
+    
+    letter-spacing: 5px;
+    
+}
+.hlogo a{
+    font-family: "Rowdies";
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: none;
+    font-size: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: rgb(210, 163, 111);
+    font-weight: 600;
+    padding: 10px;
+    transition: .3s;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    
+}
+
+nav ul li a:hover{
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+}
+
+.menu_icon {
+    display: none;
+}
+
+.menu_icon i {
+    font-size: 30px;
+}
+nav ul li a, .hlogo {
+    transition: .4s;
+}
+
+/* MEDIA QUERIES FOR NAV */
+@media (max-width: 1400px) {
+    .hcontainer {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1250px) {
+    .hcontainer {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        z-index: 110;
+        background-color: white;
+    }
+    nav ul {
+        position: fixed;
+        display: inline-block;
+        top: 70px;
+        right: 0;
+        flex-direction: column;
+        background: white;
+        gap: 0;
+        width: 250px;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        background-color: none;
+        padding: 20px;
+        width: 100%;
+        letter-spacing: 2px;
+        font-weight: 600px;
+    }
+
+    nav ul li a:hover {
+        background-color: rgb(236, 236, 236);
+    }
+
+    .menu_icon {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+        color: rgba(128, 128, 128, 0.377);
+    }
+
+    #menuList {
+        transition: all 0.5s;
+    }
+
+    /* HTEXT */
+    #htext {
+        padding-top: 150px;
+    }
+}
+
+/* Fullscreen Slider Styling */
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* HEADER TEXT */
+#htext {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hbtn #location{
+    font-weight: 600px;
+}
+
+#htext::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#htext.fade-gradient::before {
+    background: var(--current-gradient, transparent);
+    opacity: 1;
+}
+
+.htcontainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 13%;
+    font-size: 26px;
+    color: white;
+}
+
+.htcontainer h1 {
+    font-size: 120px;
+    color: white;
+    letter-spacing: 1px;
+    font-family: "Rowdies";
+    font-weight: 700;
+    font-style: normal;
+    
+}
+
+
+.pcontainer {
+    width: 580px;
+    line-height: 30px;
+    
+}
+.pcontainer p {
+    color: black;
+    text-align: right;
+    font-family: "Questrial", serif;
+    font-weight: 550;
+    font-style: normal;
+}
+
+/* Animation */
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#headline, #paragraph {
+    animation: fadeInFromTop 3s ease-out forwards;
+}
+
+/* Buttons */
+.hbtn {
+    position: relative;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 3%;
+    
+}
+
+@media (max-width: 1410px) {
+    .hbtn {
+        text-align: center;
+        align-items: center;
+    }
+    .pcontainer p{
+        text-align: center;
+        
+    }
+    .htcontainer h1 {
+        font-size: 80px;
+    }
+    .hbtnc button, .hbtnc .down {
+        margin-top: 27px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .htcontainer {
+        padding-top: 3%;
+    }
+    
+}
+
+
+@media (max-width: 1230px) {
+    .htcontainer h1 {
+        font-size: 60px;
+    }
+    
+}
+
+@media (max-width: 1100px) {
+    .htcontainer {
+        padding-top: 4%;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .htcontainer {
+        padding-top: 7%;
+    }
+    
+}
+
+
+
+@media (max-width: 900px) {
+    .hbtn {
+        align-items: center;
+    }
+    .htext::after{
+        background: linear-gradient(to bottom, transparent);
+    }
+}
+
+@media (max-width: 900px) {
+    .htcontainer h1 {
+        font-size: 70px !important;
+    }
+}
+
+@media (max-width: 790px) {
+    .htcontainer {
+        padding-top: 9%;
+    }
+    .htcontainer p {
+        font-size: 19px !important; 
+    }
+}
+
+@media (max-width: 630px) {
+    .htcontainer h1 {
+        font-size: 60px !important;
+    }
+    .htcontainer p {
+        font-size: 18px !important; 
+        padding-left: 50px;
+        padding-right: 50px;
+
+    }
+    .hbtnc button, .hbtnc .down {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 550px) {
+    .htcontainer {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 10%;
+    }
+    .htcontainer h1 {
+        font-size: 65px !important;
+    }
+    .htcontainer p {
+        font-size: 15px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (max-width: 490px) {
+    .htcontainer {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 15%;
+    }
+    .htcontainer h1 {
+        font-size: 55px !important;
+    }
+    .htcontainer p {
+        font-size: 15px !important;
+    }
+
+    .hbtnc {
+        width: 300px;
+        
+    }
+}
+
+
+.hbtnc {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    width: 395px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    
+}
+
+.down {
+    color: rgba(0, 0, 0, 0.418);
+    background-color: rgba(255, 255, 255, 0.452);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 15px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+    
+}
+
+button.click{
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.598);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 15px;
+    transform: translateY(-50%);
+    border-radius: 15px;
+    letter-spacing: 1px;
+    transition: .3s;
+    font-family: "Rowdies";
+    font-weight: 700;
+    font-style: normal;
+    
+    
+}
+
+button.prev,
+button.next {
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.598);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 13px;
+    border-radius: 15px;
+    transition: .3s;
+
+}
+
+button.prev:hover,
+button.next:hover,
+button.click:hover,
+.down:hover {
+    background-color: white;
+}
+
+.down:hover {
+    color: white;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+/* ABOUT */
+#index {
+    padding: 5% 3%;
+    background-color: rgba(237, 237, 237, 0.947);
+}
+.icontainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.iimg {
+    flex-basis: 30%;
+    position: relative;
+}
+.iimg .compass {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;   
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.itext {
+    flex-basis: 70%;
+    padding: 25px;
+}
+
+.itext h1{
+    font-family: "Rowdies";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.itext p{
+    font-family: "Questrial", serif;
+  font-weight: 550;
+  font-style: normal;
+    font-size: 27px;
+}
+
+.itext span {
+    font-weight: 1000px !important;
+    font-family: "Questrial", serif;
+    font-style: normal;
+    font-size: 33px;
+    font-weight: 590;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-50px);
+    }
+    60% {
+        transform: translateY(-20px);
+    }
+}
+
+.compass h1:hover {
+    animation: bounce 1s;
+}
+
+@media (max-width: 550px) {
+    .iimg .compass {
+        display: inline-flex;
+        margin: 20px;
+    }
+    .itext {
+        flex-basis: 100%;
+    }
+}
+
+/* FOOTER */
+#footer {
+    padding: 3% 5% ;
+    background-color: rgb(78, 78, 78);
+}
+
+.fcontent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.fcontent *  h1 {
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 35px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.fcontent * p {
+    font-family: "Questrial", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    
+}
+
+.wname {
+    flex-basis: 40%;
+    padding-top: 15px;
+}
+
+.wname h1{
+    font-size: 35px;
+    padding-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+.wtext {
+    padding-bottom: 200px;
+    opacity: .7;
+}
+.cright {
+    padding-bottom: 30px;
+}
+
+.fitems {
+    flex-basis: 10%;
+    padding: 20px;
+}
+
+.fplaces {
+    flex-basis: 17%;
+    padding: 20px;
+}
+
+.fitems a, .fplaces a{
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.fitems a:hover, .fplaces a:hover{
+    color: rgb(239, 239, 155);
+    opacity: 1;
+}
+
+
+.fitems p, .fitems h1, .fplaces p, .fplaces h1 {
+    padding-bottom: 15px;
+}
+
+@media (max-width: 1280px) {
+    .wname {
+        flex-basis: 30%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .wname {
+        flex-basis: 90%;
+    }
+    .wtext {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .fitems {
+        flex-basis: 40%;
+    }
+}
+
+
+/* MENU */
+#p1cmenu {
+    background-color: #e0e0e0;
+}
+
+.pm1container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px,1fr));
+    grid-template-rows: 500px;
+}
+
+
+@media (max-width: 650px) {
+    .pm1container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        grid-template-rows: 500px;
+    }
+    .pm1container .p1col1 h1{
+        font-size: 50px !important; 
+        
+    }
+    .pm1container .p1col2 h1{
+        font-size: 50px !important; 
+        text-align: center;
+    }
+    .pm1container .p1col3 h1{
+        font-size: 40px !important; 
+        text-align: center;
+    }
+    .pm1container .p1col4 h1{
+        font-size: 50px !important; 
+        text-align: center;
+    }
+    
+
+    .boraover h1 a{
+        font-size: 47px !important; 
+        text-align: center;
+    }
+    .hunover h1 a{
+        font-size: 47px !important; 
+        text-align: center;
+    }
+    .banover h1 a{
+        font-size: 47px !important; 
+        text-align: center;
+    }
+    .moover h1 a{
+        font-size: 47px !important; 
+        text-align: center;
+    }
+}
+
+.pm1container > div {
+    
+    padding: 40px;
+    height: 500px;
+    color: white;
+    transition: 0.5s;
+
+}
+
+.pm1container * a {
+    text-decoration: none;
+    
+}
+
+
+.pm1container .p1col1 {
+    background: url(HomepagePictures/boracay.jpg);
+    background-position: center;
+    padding: 40px;
+    color: white;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .9;
+    position: relative;
+    
+
+}
+
+.pm1container .p1col1 h1{
+    font-size: 60px;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 100px;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+@media (max-width: 1500px) {
+    .pm1container .p1col1 h1{
+        font-size: 80px;
+    }
+    
+}
+
+.pm1container .boraover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(165, 94, 28, 0.674);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+   
+}
+
+.boraover a {
+    font-size: 100px !important;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.boraover a:hover {
+    color: rgb(0, 0, 0);
+
+}
+
+.boraover > * {
+    transform: translateY(25px);
+    transition: .3s;
+}
+
+.pm1container .p1col1:hover  > .boraover{
+    opacity: 1;
+}
+
+.boraover:hover > * {
+    transform: translateY(0px);
+
+}
+
+
+
+.pm1container .p1col2 {
+    background: url(HomepagePictures/hundredisland.jpg);
+    background-position: center;
+    padding: 40px;
+    color: white;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    position: relative;
+}
+
+.pm1container .p1col2 h1 {
+    font-size: 60px;
+    font-family: "Rowdies";
+    font-weight: 900;
+    font-style: normal;
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+@media (max-width: 1600px) {
+    .pm1container .p1col2 h1{
+        text-align: center;
+    }
+    .pm1container .p1col3 h1{
+        
+        text-align: center;
+    }
+    .pm1container .p1col4 h1{
+        
+        text-align: center;
+    }
+    
+    
+}
+
+@media (max-width: 1190px) {
+    .pm1container .p1col1 h1{
+        font-size: 80px ;
+        text-align: center;
+    }
+    .pm1container .p1col2 h1{
+        font-size: 80px ;
+        text-align: center;
+    }
+    .pm1container .p1col3 h1{
+        font-size: 80px ;
+        text-align: center;
+    }
+    .pm1container .p1col4 h1{
+        font-size: 80px ;
+        text-align: center;
+    }
+    
+    
+}
+
+
+@media (max-width: 1580px) {
+    .boraover h1{
+        text-align: center;
+    }
+    .hunover h1{
+        text-align: center;
+    }
+    .banover a{
+        text-align: center;
+    }
+    .moover a{
+        text-align: center;
+    }
+    
+    
+}
+
+.pm1container .hunover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(10, 165, 176, 0.699);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+   
+}
+
+.hunover a {
+    font-size: 100px !important;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+.hunover a:hover {
+    color: rgb(0, 0, 0);
+
+}
+
+.hunover > * {
+    transform: translateY(25px);
+    transition: .3s;
+}
+
+.pm1container .p1col2:hover  > .hunover{
+    opacity: 1;
+}
+
+.hunover:hover > * {
+    transform: translateY(0px);
+
+}
+
+.p1col2 {
+    position: relative;
+}
+
+
+
+.pm1container .p1col3 {
+    background: url(HomepagePictures/banauerice.jpg);
+    background-position: center;
+    padding: 40px;
+    color: white;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    position: relative;
+
+}
+
+.pm1container .p1col3 h1 {
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.pm1container .banover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(30, 100, 5, 0.715);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+   
+}
+
+.banover a {
+    font-size: 100px !important;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+.banover a:hover {
+    color: rgb(0, 0, 0);
+
+}
+
+.banover > * {
+    transform: translateY(25px);
+    transition: .3s;
+}
+
+.pm1container .p1col3:hover  > .banover{
+    opacity: 1;
+    
+}
+
+
+.p1col1:hover > .bry {
+    opacity: 0 !important;
+    
+}
+.p1col2:hover > .his {
+    opacity: 0 !important;
+    
+}
+
+.p1col3:hover > .bnt {
+    opacity: 0 !important;
+    
+}
+
+.p1col4:hover > .mpt {
+    opacity: 0 !important;
+    
+}
+
+
+
+.banover:hover > * {
+    transform: translateY(0px);
+
+}
+
+.banover:hover > .p1col3 h1 {
+    opacity: 0;
+}
+
+.pm1container .p1col4 {
+    background: url(HomepagePictures/pinatubo.png);
+    background-position: center;
+    padding: 40px;
+    color: white;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    position: relative;
+}
+
+.pm1container .p1col4 h1 {
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.pm1container .moover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(127, 101, 7, 0.685);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+   
+}
+
+.moover a {
+    font-size: 100px !important;
+    font-family: "Rowdies";
+    font-weight: 570;
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .5s;
+
+}
+
+.moover a:hover {
+    color: rgb(0, 0, 0);
+
+}
+
+.moover > * {
+    transform: translateY(25px);
+    transition: .3s;
+}
+
+.pm1container .p1col4:hover  > .moover{
+    opacity: 1;
+}
+
+.moover:hover > * {
+    transform: translateY(0px);
+
+}
